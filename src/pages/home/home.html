@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>TBook</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="assets/images/desert.jpg"/>
+    <div class="card-title">TBook</div>
+    <div class="card-subtitle">Helps you manage everything related to TAX for You</div>
+    <button ion-button block (click)="facebookLogin()">Sign in With Facebook</button>
+  </ion-card>
+
+   <ion-card *ngIf="userProfile">
+    <img [src]="userProfile.photoURL"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ userProfile.displayName }}
+      </ion-card-title>
+      <p>
+        The UID for this new user is {{userProfile.uid}} and the email is {{userProfile.email}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
